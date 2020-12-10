@@ -107,7 +107,11 @@ is not visible to the `test_root.py`. The failure occurs because the `common_fix
 
 # Relevant documentation
 
-Sharing fixtures with conftest.py files
+This excerpt from the book *pytest Quick Start Guide* discusses the top level visibility of fixtures to any
+test modules that hold a direct path from the conftest's folder down to any subfolder directly beneath it.
+
+> **Sharing fixtures with conftest.py files**
+>
 > A conftest.py file is a normal Python module, except that it is loaded
 > automatically by pytest, and any fixtures defined in it are available to test
 > modules in the same directory and below automatically.
@@ -116,11 +120,36 @@ Sharing fixtures with conftest.py files
 
 <br>
 
+This excerpt from the online documentation discusses order of fixture resolution, going in reverse order
+in the ranking of precedence for fixture discovery.
+
+> **`conftest.py`: sharing fixture functions**
+>
+> The discovery of fixture functions starts at test classes, then test modules, then conftest.py files
+> and finally builtin and third party plugins.
+> https://docs.pytest.org/en/stable/fixture.html#conftest-py-sharing-fixture-functions
+
+The most immediate representation of this experiment in the official documentation lands in the first two
+examples of fixtures being overridden. This exercise in fixture precedence is essentially the same idea
+as overriding fixtures if you start with the understanding that the highest level conftest.py file defines
+the most widely visible fixtures, but also the least precedent ones. The closer you get to the test module
+the higher the precedence of a fixture to override the more general higher up the folder structure.
+
+> **Overriding fixtures on various levels**
+>
+> - Override a fixture on a folder (conftest) level
+> - Override a fixture on a test module level
+> - Override a fixture with direct test parametrization
+> - Override a parametrized fixture with non-parametrized one and vice versa
+> https://docs.pytest.org/en/stable/fixture.html#overriding-fixtures-on-various-levels
+
+<br>
+
 # Summary
 By default fixtures that get resolved on the path from the root directory to test module are resolved closest to the
 test module itself. You can think of fixture resolution as accumulative working from the root test directory
 all the way down to the test module itself, where subsequent definitions to symbols closer to the test module
-overwrite/update any definitions found earlier in the path.
+override/overwrite/update any definitions found earlier in the path.
 
 
 ```shell
