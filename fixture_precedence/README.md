@@ -163,5 +163,3 @@ root_test_dir
     │       └── conftest.py       <-------- Rank 2
     │       └── test_module.py    <-------- Rank 1
 ```
-
-#
