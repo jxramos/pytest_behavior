@@ -14,3 +14,7 @@ module from different plugin folders.
 Two techniques are illustrated for the division into cases for how the value of the `pytest_plugins`
 gets specified: environment variables and command line arguments. Both must operate at globals scope
 since the `pytest_plugins` list must be specified globally at the root folder's conftest file.
+
+# Pytest Plugins Order
+This experiment is meant to illustrate the fixture precedence when two fixtures are shared in two referenced
+pytest plugins when the order if swapped in the `pytest_plugins` list.

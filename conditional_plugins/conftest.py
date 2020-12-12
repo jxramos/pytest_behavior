@@ -16,7 +16,6 @@ CASE_VAR_ARG = "--"+CASE_VAR
 case_var_default = "yc"
 case_var = case_var_default
 if CASE_VAR_ARG in sys.argv:
-    print("argv")
     idx = sys.argv.index(CASE_VAR_ARG) + 1
     case_var = sys.argv[idx]
 elif CASE_VAR in os.environ:
