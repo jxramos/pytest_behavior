@@ -340,3 +340,11 @@ can see if you inspect the section `#ERRONEOUS fixture attempt` in the conftest 
 - [pytest API Reference](https://docs.pytest.org/en/stable/reference.html?highlight=pytest_plugins#globalvar-pytest_plugins)
 - [Requiring/Loading plugins in a test module or conftest file](https://docs.pytest.org/en/stable/writing_plugins.html?highlight=pytest_plugins#requiring-loading-plugins-in-a-test-module-or-conftest-file)
 - [Using fixtures from other projects](https://docs.pytest.org/en/stable/fixture.html?highlight=pytest_plugins#using-fixtures-from-other-projects)
+
+> The standard/recommended layout is to have your config file at the root of the tests directory, and
+> then `conftest.py´ files placed inside this hierarchy **according to their visibility**.
+That is to say according to the visibility you want for them to have, that is what is to override
+and ultimately made visible to what test modules.
+https://github.com/pytest-dev/pytest/issues/5822#issuecomment-566552697
+
+
