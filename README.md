@@ -18,3 +18,7 @@ since the `pytest_plugins` list must be specified globally at the root folder's 
 # Pytest Plugins Order
 This experiment is meant to illustrate the fixture precedence when two fixtures are shared in two referenced
 pytest plugins when the order if swapped in the `pytest_plugins` list.
+
+# Ini Based Plugin Selection
+This experiment demonstrates how plugin selection can be accomplished through pytest `ini` configuration
+files using the `addopts` capabilities.
