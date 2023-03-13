@@ -11,7 +11,8 @@ when using `conftest.py` files alone for fixture definitions.
 This experiment is meant to illustrate how different fixture implementations can be drawn into a test
 module from different plugin folders.
 
-Two techniques are illustrated for the division into cases for how the value of the `pytest_plugins`
+Two techniques are illustrated for the division into cases for how the value of the
+[`pytest_plugins`](https://docs.pytest.org/en/7.1.x/how-to/plugins.html#requiring-loading-plugins-in-a-test-module-or-conftest-file)
 gets specified: environment variables and command line arguments. Both must operate at globals scope
 since the `pytest_plugins` list must be specified globally at the root folder's conftest file.
 
